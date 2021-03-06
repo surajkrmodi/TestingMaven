@@ -19,10 +19,33 @@
   <artifactId>commons-lang3</artifactId>
   <version>3.12.0</version>
 </dependency>
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.13.2</version>
+  <scope>test</scope>
+</dependency>
+<!--<dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-surefire-report-plugin</artifactId>
+  <version>3.0.0-M5</version>
+  <type>maven-plugin</type>
+</dependency>  -->
 </dependencies>
 
 <build>
     <plugins>
+   <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -32,6 +55,23 @@
                 <target>1.8</target>
             </configuration>
         </plugin>
+<!--     <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin> -->
     </plugins>
 </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>3.0.0-M5</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
